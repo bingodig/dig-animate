@@ -32,7 +32,8 @@ if (__DEV__) {
 
 module.exports = {
 	//设置开发时源代码映射工具
-	devtool: __DEV__ ? 'cheap-module-eval-source-map' : 'hidden-source-map',
+	//devtool: __DEV__ ? 'cheap-module-eval-source-map' : 'hidden-source-map',
+	devtool: __DEV__ ? 'eval-source-map' : 'eval-source-map',
 
 	entry: entry,
 
@@ -51,7 +52,7 @@ module.exports = {
     	//开发环境下所需要的插件
     	[].concat(plugins.commonPlugins).concat(plugins.devPlugins) :
     	//生产环境下需要添加的插件
-    	[].concat(plugins.commonPlugins).concat(plugins.prodPlugins).concat(plugins.uglifyJsPlugin),
+    	[].concat(plugins.commonPlugins).concat(plugins.prodPlugins),
 
 	module: {
 		loaders: [

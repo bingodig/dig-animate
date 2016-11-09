@@ -1,4 +1,4 @@
 
-# dig-animate
+# dig-components
 
-动画库
+组件库

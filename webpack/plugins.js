@@ -30,7 +30,7 @@ exports.commonPlugins = [
 
 	//定义环境变量
 	new webpack.DefinePlugin({
-		'process.env.NODE_ENV': JSON.stringify(NODE_ENV)
+		'process.env.NODE_ENV': JSON.stringify(__DEV__ ? 'development' : 'production')
 	})
 ];
 
@@ -46,13 +46,12 @@ exports.devPlugins = [
 //生产环境下使用插件
 exports.prodPlugins = [
   //提取出所有的CSS代码
-  new ExtractTextPlugin(__DEV__ ? '[name].css' : '[name].min.css')
-];
-
-
-//代码压缩插件
-exports.uglifyJsPlugin = [
+  new ExtractTextPlugin(__DEV__ ? '[name].css' : '[name].min.css'),
+  //代码压缩插件
   new webpack.optimize.UglifyJsPlugin({
     compress: {warnings: false}
   })
 ];
+
+
+

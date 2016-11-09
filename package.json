@@ -2,7 +2,7 @@
   "name": "dig-animate",
   "version": "0.0.1",
   "description": "animate for dig",
-  "main": "index.js",
+  "main": "lib/animate.js",
   "scripts": {
     "build": "SET NODE_ENV=production&webpack --progress --colors",
     "dev": "SET NODE_ENV=development&webpack-dev-server --hot --inline",
